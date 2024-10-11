@@ -6,7 +6,7 @@ export default function ReduxPage() {
   useEffect(() => {
     console.log('getState()',store.getState())
     let unsubscribe = store.subscribe(() => {
-      setCount(store.getState());
+      setCount(store.getState().count);
       console.log(store.getState());
     });
 
