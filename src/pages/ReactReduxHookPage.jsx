@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "../my-react-redux";
+import { useEffect } from 'react';
+// import { useDispatch, useSelector } from "../my-react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ReactReduxHookPage() {
   useEffect(() => {
@@ -7,14 +8,16 @@ export default function ReactReduxHookPage() {
   }, []);
 
   const count = useSelector((state) => {
-    console.log("当前state ", state);
-    return state.count
+    console.log('当前state ', state);
+    return state.count;
   });
 
   const dispatch = useDispatch();
   return (
     <div>
-      <button onClick={() => dispatch({ type: "ADD" })}>{count}</button>
+      <p>{count}</p>
+      <button onClick={() => dispatch({ type: 'ADD' })}>+1</button>
+      <button onClick={() => dispatch({ type: 'MINUS' })}>-1</button>
     </div>
   );
 }

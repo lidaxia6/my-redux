@@ -1,5 +1,7 @@
-import { createStore, combineReducers } from "../my-redux";
+// import { createStore, combineReducers } from "../my-redux";
+import { createStore, combineReducers } from "redux";
 // import { createStore } from "../my-redux-test";
+
 
 function countReducer(state = 0, action) {
   switch (action.type) {

@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import store from "../store";
+import { useEffect, useState } from 'react';
+import store from '../store';
 
 export default function ReduxPage() {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    console.log('getState()',store.getState())
+    console.log('store ==>', store);
+    console.log('getState()', store.getState());
     let unsubscribe = store.subscribe(() => {
       setCount(store.getState().count);
       console.log(store.getState());
@@ -16,11 +17,11 @@ export default function ReduxPage() {
   });
 
   const add = () => {
-    store.dispatch({ type: "ADD" });
+    store.dispatch({ type: 'ADD' });
   };
 
   const minus = () => {
-    store.dispatch({ type: "MINUS" });
+    store.dispatch({ type: 'MINUS' });
   };
 
   return (
