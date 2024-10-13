@@ -2,6 +2,7 @@
 // 这个reducer来自createStore(reducer),reducer 即 combination(currentState,action)
 export default function combineReducers(reducers) {
   // 返回一个总的reducer (prevState,action) => nextState
+  // createStore.js:  currentState = reducer(currentState, action)
   return function combination(state = {}, action) {
     let nextState = {};
     let hasChanged = false;
